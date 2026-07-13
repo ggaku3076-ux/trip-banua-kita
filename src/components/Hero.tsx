@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Sparkles, Camera, Map, Compass } from "lucide-react";
 
@@ -7,39 +5,38 @@ export default function Hero() {
   return (
     <section
       id="beranda"
-      className="relative h-screen min-h-screen w-full overflow-hidden bg-brand-dark text-white"
-      aria-labelledby="hero-title"
+      className="relative min-h-screen overflow-hidden bg-brand-dark text-white"
+      aria-label="Trip Banua Kita Hero"
     >
-      {/* BACKGROUND IMAGE 1920x1080 FULLSCREEN TANPA CROP */}
-      <div className="absolute inset-0 z-0 h-full w-full" aria-hidden="true">
+      {/* Desktop background: 16:9, full-screen, tidak gepeng */}
+      <div className="absolute inset-0 z-0 hidden md:block" aria-hidden="true">
         <Image
           src="/Asset/BACKGROUND BANUA.png"
-          alt="Trip Banua Kita Hero Background"
+          alt="Trip Banua Kita Hero Background Desktop"
           fill
           priority
           sizes="100vw"
-          className="object-fill"
+          className="object-cover object-center"
         />
       </div>
 
-      <div className="absolute inset-0 z-10 bg-brand-dark/20 pointer-events-none" />
+      {/* Mobile background khusus: 9:16 */}
+      <div className="absolute inset-0 z-0 block md:hidden" aria-hidden="true">
+        <Image
+          src="/Asset/MOBILE.png"
+          alt="Trip Banua Kita Hero Background Mobile"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
 
-      <div className="relative z-20 mx-auto flex h-full w-full max-w-7xl flex-col justify-center px-6 pt-28 md:px-8 lg:items-end">
-        <div className="max-w-3xl text-center lg:mr-8 lg:text-right">
-          <h1
-            id="hero-title"
-            className="text-4xl font-extrabold leading-[0.95] tracking-tight text-white drop-shadow-xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Liburan Berkelas, <br />
-            <span className="text-white">Kenangan Tak Terbatas.</span>
-          </h1>
+      <div className="absolute inset-0 z-10 bg-brand-dark/5 pointer-events-none" />
 
-          <p className="mx-auto mt-6 max-w-2xl text-base font-semibold leading-relaxed text-white drop-shadow-lg sm:text-lg lg:mx-0 lg:text-xl">
-            Yuk, ciptakan cerita terbaikmu bersama kami. Menjelajahi keindahan Rinjani yang megah, keeksotisan Bali-Lombok, dan berbagai destinasi premium tanah air dengan aman dan nyaman.
-          </p>
-        </div>
-
-        <div className="absolute bottom-6 left-1/2 hidden w-[calc(100%-3rem)] max-w-7xl -translate-x-1/2 grid-cols-12 items-center gap-6 border-t border-white/15 pt-4 text-left md:grid">
+      {/* Tidak ada teks overlay: desain utama sudah berada di aset background */}
+      <div className="relative z-20 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-end px-6 pb-6 md:px-8">
+        <div className="hidden md:grid grid-cols-12 items-center gap-6 border-t border-white/15 pt-4 text-left">
           <div className="col-span-5 flex items-center gap-4">
             <div className="flex flex-col">
               <span className="text-xs font-bold uppercase tracking-wider text-white">Travelnya Urang Banua</span>
