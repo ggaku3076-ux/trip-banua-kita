@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Award, CheckCircle2, ChevronRight, Car, Compass, Plane } from "lucide-react";
 
 interface TransportService {
@@ -43,15 +43,15 @@ export default function AboutSection() {
     },
   ];
 
-  const recommendedService = useMemo(() => {
-    if (passengers <= 6) {
-      return services.find((s) => s.id === "avanza") || services[0];
-    } else if (passengers <= 7) {
-      return services.find((s) => s.id === "innova") || services[1];
-    } else {
-      return services.find((s) => s.id === "hiace") || services[2];
-    }
-  }, [passengers]);
+  // Recommendations based on passenger count
+  let recommendedService = services[0];
+  if (passengers <= 6) {
+    recommendedService = services.find((s) => s.id === "avanza") || services[0];
+  } else if (passengers <= 7) {
+    recommendedService = services.find((s) => s.id === "innova") || services[1];
+  } else {
+    recommendedService = services.find((s) => s.id === "hiace") || services[2];
+  }
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();

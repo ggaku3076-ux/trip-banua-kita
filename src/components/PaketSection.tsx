@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
+
 import Image from "next/image";
 import { Search, Compass, Check, ArrowRight } from "lucide-react";
 
@@ -54,14 +55,10 @@ export default function PaketSection() {
     },
   ];
 
-  const filteredPaket = useMemo(() => {
-    return paketList.filter((item) => {
-      return (
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    });
-  }, [searchQuery]);
+  const filteredPaket = paketList.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <section className="py-24 bg-brand-cream">
