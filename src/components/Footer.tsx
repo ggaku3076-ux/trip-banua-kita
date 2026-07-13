@@ -15,12 +15,12 @@ export default function Footer() {
 
           <div className="flex flex-col items-center text-center gap-3 mb-8">
             <div className="flex items-center gap-2.5">
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white p-1.5 shadow-lg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/Asset/LOGO BANUA.png"
                   alt="Trip Banua Kita Logo"
-                  className="h-full w-full object-contain bg-transparent"
+                  className="h-full w-full object-contain"
                 />
               </div>
               <span className="font-nunito font-light text-xl text-white tracking-tight">
@@ -89,12 +89,12 @@ export default function Footer() {
           <div className="grid grid-cols-4 gap-8 mb-12">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2.5">
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden">
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-white p-1.5 shadow-lg">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/Asset/LOGO BANUA.png"
                     alt="Trip Banua Kita Logo"
-                    className="h-full w-full object-contain bg-transparent"
+                    className="h-full w-full object-contain"
                   />
                 </div>
                 <span className="font-nunito font-semibold text-xl text-white tracking-tight">

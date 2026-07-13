@@ -56,12 +56,12 @@ export default function Navbar() {
             className="flex items-center gap-3 transition-opacity hover:opacity-90"
             aria-label="Trip Banua Kita - Kembali ke Beranda"
           >
-            <div className="relative h-12 w-12 shrink-0 overflow-hidden flex items-center justify-center">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-white p-1.5 shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/Asset/LOGO BANUA.png"
                 alt="Trip Banua Kita Logo"
-                className="h-full w-full object-contain filter drop-shadow-sm bg-transparent"
+                className="h-full w-full object-contain"
               />
             </div>
             <span className="font-nunito font-semibold text-lg tracking-tight text-white leading-none">
@@ -157,12 +157,12 @@ export default function Navbar() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center gap-2.5 mb-2">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white p-1.5 shadow-lg">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/Asset/LOGO BANUA.png"
                       alt="Trip Banua Kita Logo"
-                      className="h-full w-full object-contain bg-transparent"
+                      className="h-full w-full object-contain"
                     />
                   </div>
                   <span className="font-nunito font-semibold text-lg text-white tracking-tight">

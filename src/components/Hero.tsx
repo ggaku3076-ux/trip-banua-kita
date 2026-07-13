@@ -1,65 +1,52 @@
 "use client";
 
 import Image from "next/image";
-import { Compass, Sparkles, Camera, Map } from "lucide-react";
+import { Sparkles, Camera, Map, Compass } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="beranda"
-      className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-[#0e1b2e] text-white"
+      className="relative h-screen min-h-screen w-full overflow-hidden bg-brand-dark text-white"
       aria-labelledby="hero-title"
     >
-      {/* BACKGROUND IMAGE 1920x1080 FULL SCREEN */}
-      <div className="absolute inset-0 z-0" aria-hidden="true">
+      {/* BACKGROUND IMAGE 1920x1080 FULLSCREEN TANPA CROP */}
+      <div className="absolute inset-0 z-0 h-full w-full" aria-hidden="true">
         <Image
           src="/Asset/BACKGROUND BANUA.png"
           alt="Trip Banua Kita Hero Background"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-fill"
         />
       </div>
 
-      {/* SUBTLE DARK OVERLAY FOR TEXT READABILITY */}
-      <div className="absolute inset-0 bg-[#0e1b2e]/30 pointer-events-none z-10" />
+      <div className="absolute inset-0 z-10 bg-brand-dark/20 pointer-events-none" />
 
-      {/* MAIN CONTENT AREA - PELETAKAN TEKS SESUAI DENGAN BACKGROUND (tidak menabrak elemen utama di kiri dan teks di background)
-          Berdasarkan analisis visual, area langit atas-tengah dan kanan bawah adalah area kosong paling aman.
-          Teks diletakkan di sebelah kanan tengah-bawah untuk menghindari pria beransel di kiri depan. */}
-      <div className="relative z-20 mx-auto w-full max-w-7xl px-6 md:px-8 flex-grow flex flex-col justify-end lg:justify-center pt-32 pb-4 lg:pb-6 items-end">
-        <div className="max-w-xl text-center lg:text-right flex flex-col items-center lg:items-end gap-4 md:gap-6 mb-2 lg:mb-3 lg:mr-10">
+      <div className="relative z-20 mx-auto flex h-full w-full max-w-7xl flex-col justify-center px-6 pt-28 md:px-8 lg:items-end">
+        <div className="max-w-3xl text-center lg:mr-8 lg:text-right">
           <h1
             id="hero-title"
-            className="text-2xl sm:text-3xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans filter drop-shadow-lg"
+            className="text-4xl font-extrabold leading-[0.95] tracking-tight text-white drop-shadow-xl sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Liburan Berkelas, <br />
-            <span className="text-brand-accent">Kenangan Tak Terbatas.</span>
+            <span className="text-white">Kenangan Tak Terbatas.</span>
           </h1>
 
-          <p className="text-xs sm:text-sm lg:text-base text-white leading-relaxed max-w-md font-medium filter drop-shadow-md">
+          <p className="mx-auto mt-6 max-w-2xl text-base font-semibold leading-relaxed text-white drop-shadow-lg sm:text-lg lg:mx-0 lg:text-xl">
             Yuk, ciptakan cerita terbaikmu bersama kami. Menjelajahi keindahan Rinjani yang megah, keeksotisan Bali-Lombok, dan berbagai destinasi premium tanah air dengan aman dan nyaman.
           </p>
-
-          <a
-            href="/booking"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-accent hover:bg-brand-accent-light px-6 py-3 text-sm font-bold text-white transition-all shadow-md mt-2"
-          >
-            <span>Mulai Petualangan</span>
-            <Compass className="h-4.5 w-4.5 animate-spin" style={{ animationDuration: '6s' }} />
-          </a>
         </div>
 
-        {/* HERO FOOTER */}
-        <div className="hidden md:grid grid-cols-12 gap-6 pt-3 border-t border-white/10 mt-12 items-center text-left w-full">
+        <div className="absolute bottom-6 left-1/2 hidden w-[calc(100%-3rem)] max-w-7xl -translate-x-1/2 grid-cols-12 items-center gap-6 border-t border-white/15 pt-4 text-left md:grid">
           <div className="col-span-5 flex items-center gap-4">
             <div className="flex flex-col">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-accent">Travelnya Urang Banua</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-white">Travelnya Urang Banua</span>
               <span className="text-[11px] text-white/80">Layanan Terbaik & Terpercaya</span>
             </div>
-            <div className="h-6 w-px bg-white/20" />
-            <div className="flex items-center gap-2 text-white/80">
+            <div className="h-6 w-px bg-white/25" />
+            <div className="flex items-center gap-2 text-white/85">
               <Camera className="h-4.5 w-4.5" />
               <Compass className="h-4.5 w-4.5" />
               <Map className="h-4.5 w-4.5" />
@@ -68,7 +55,7 @@ export default function Hero() {
           </div>
 
           <div className="col-span-7 text-right">
-            <p className="text-xs text-white/85 leading-relaxed">
+            <p className="text-xs leading-relaxed text-white/90">
               Jasa travel & open trip dari Banjarmasin yang melayani tour domestik dan internasional. Menyediakan fasilitas premium, pemandu profesional, dan perjalanan tanpa repot.
             </p>
           </div>
